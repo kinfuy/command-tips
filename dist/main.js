@@ -11,8 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
-const version_1 = require("./shell/version");
-commander_1.program.option('-v').action(() => __awaiter(void 0, void 0, void 0, function* () {
-    yield (0, version_1.version)();
+const shell_1 = require("./shell");
+commander_1.program.option('-v, --version').action(() => __awaiter(void 0, void 0, void 0, function* () {
+    yield (0, shell_1.version)();
+}));
+commander_1.program.option('-l, --list').action(() => __awaiter(void 0, void 0, void 0, function* () {
+    yield (0, shell_1.list)();
 }));
 commander_1.program.parse(process.argv);

@@ -15,18 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = void 0;
 const util_1 = require("util");
 const package_json_1 = __importDefault(require("../../package.json"));
-const chalk_1 = require("chalk");
+const log_1 = require("../libs/log");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const figlet = (0, util_1.promisify)(require('figlet'));
-const log = (type, msg) => {
-    if (type === 'success') {
-        console.log((0, chalk_1.green)(msg));
-    }
-    if (type === 'error') {
-        console.log((0, chalk_1.red)(msg));
-    }
-};
 const version = () => __awaiter(void 0, void 0, void 0, function* () {
     const info = yield figlet(`${package_json_1.default.name}`);
-    log('success', `${info}  ${package_json_1.default.version}`);
+    log_1.log.success(`${info}  ${package_json_1.default.version}`);
 });
 exports.version = version;

@@ -12,21 +12,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.version = void 0;
-const util_1 = require("util");
-const package_json_1 = __importDefault(require("../../package.json"));
-const chalk_1 = __importDefault(require("chalk"));
-const figlet = (0, util_1.promisify)(require('figlet'));
-const log = (type, msg) => {
-    if (type === 'success') {
-        console.log(chalk_1.default.green(msg));
-    }
-    if (type === 'error') {
-        console.log(chalk_1.default.red(msg));
-    }
-};
-const version = () => __awaiter(void 0, void 0, void 0, function* () {
-    const info = yield figlet(`${package_json_1.default.name}`);
-    log('success', `${info}  ${package_json_1.default.version}`);
+exports.list = void 0;
+const promises_1 = require("fs/promises");
+const log_1 = require("../libs/log");
+const path_1 = require("path");
+const inquirer_1 = __importDefault(require("inquirer"));
+const list = () => __awaiter(void 0, void 0, void 0, function* () {
+    const shells = yield (0, promises_1.readdir)((0, path_1.resolve)(__dirname, '../template'));
+    yield inquirer_1.default
+        .prompt([
+        {
+            type: 'list',
+            name: 'namespace',
+            message: 'tips list！',
+            choices: shells.map((x) => {
+                return {
+                    name: x,
+                    value: x,
+                };
+            }),
+        },
+    ])
+        .then((answers) => {
+        // 打印互用输入结果
+        console.log(answers);
+        log_1.log.success(answers.namespace);
+    });
 });
-exports.version = version;
+exports.list = list;

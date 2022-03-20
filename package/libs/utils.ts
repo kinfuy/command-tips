@@ -1,15 +1,20 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  extends: ['plugin:@typescript-eslint/recommended'],
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-    ecmaVersion: 2019,
-    sourceType: 'module',
-    createDefaultProgram: true,
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
   },
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      tsx: true,
+    },
+  },
+  extends: ['plugin:@typescript-eslint/recommended'],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'comma-dangle': ['off', 'always-multiline'], // 添加结尾的逗号
