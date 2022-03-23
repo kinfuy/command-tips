@@ -1,0 +1,13 @@
+{
+    "name": "pnpm",
+    "shell": [
+        {
+            "cli": "pnpm run build",
+            "desc": "打包当前package"
+        },
+        {
+            "cli": "pnpm run dev",
+            "desc": "启动开发环境"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "git",
+    "shell": [
+        {
+            "cli": "git push origin master",
+            "desc": "推送到主分支"
+        },
+        {
+            "cli": "git log",
+            "desc": "查看分支历史"
+        },
+        {
+            "cli": "git add .",
+            "desc": "提交到暂存区"
+        },
+        {
+            "cli": "git commit -m 'fix: detail'",
+            "desc": "comit detaill"
+        },
+        {
+            "cli": "git config --local user.name 'Thezero'",
+            "desc": "配置当前仓库git用户名"
+        },
+        {
+            "cli": "git config --local user.email 'yonghu520@outlook.com'",
+            "desc": "配置当前仓库git邮箱"
+        },
+        {
+            "cli": "git reset --soft HEAD^",
+            "desc": "配置当前仓库git邮箱"
+        }
+    ]
+}
