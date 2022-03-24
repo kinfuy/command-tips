@@ -19,7 +19,6 @@ program
     .alias('s')
     .option('-t, --tag <tag>', '在该类库中检索shell')
     .option('-s, --similar <similar>', '字符串模糊匹配shell')
-    .option('-r, --regular <regular>', '正则表达式匹配shell')
     .action(searchAction_1.searchAction);
 program
     .command('task')

@@ -5,7 +5,6 @@ export interface BaseCmd {
 export interface SearchCmd {
   tag?: string;
   similar?: string;
-  regular?: string;
 }
 
 export interface InstallCmd {

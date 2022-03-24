@@ -9,6 +9,10 @@
             "cli": "pnpm run dev",
             "desc": "启动开发环境",
             "isTemp": true
+        },
+        {
+            "cli": "pnpm store prune",
+            "desc": "清除无引用pnpm包"
         }
     ]
 }

@@ -33,7 +33,7 @@
             "desc": "回退上一版本到暂存区"
         },
         {
-            "cli": "git remote add origin  git@github.com:xxxxxx/ssssss",
+            "cli": "git remote add origin git@github.com:xxxxxx/ssssss",
             "desc": "添加远程仓库",
             "isTemp": true
         }
