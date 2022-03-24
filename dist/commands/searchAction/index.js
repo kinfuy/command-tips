@@ -26,9 +26,10 @@ const searchAction = (cmd) => __awaiter(void 0, void 0, void 0, function* () {
             const shells = yield (0, getLibsShell_1.getFileShells)(`${path_1.libsoutputPath}/${cmd.tag}.json`);
             if (shells) {
                 const shellQuestion = (0, answer_1.createQuestions)('shell', shells.shell);
-                const { shell } = yield inquirer_1.default.prompt(shellQuestion);
-                log_1.log.info(`正在执行:${shell}`);
-                (0, shell_1.runShell)(shell)
+                const { shell, isChange, newShell } = yield inquirer_1.default.prompt(shellQuestion);
+                const editorShell = isChange ? newShell : shell;
+                log_1.log.info(`正在执行:${editorShell}`);
+                (0, shell_1.runShell)(editorShell)
                     .then((msg) => {
                     log_1.log.success(msg);
                 })

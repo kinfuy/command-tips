@@ -2,6 +2,7 @@
 import { baseAction } from './commands/baseAction';
 import { searchAction } from './commands/searchAction';
 import { taskAction } from './commands/taskAction';
+import { installAction } from './commands/installAction';
 import { Command } from 'commander';
 const program = new Command();
 
@@ -27,4 +28,12 @@ program
   .option('-a, --async <async>', '异步执行shell')
   .option('-s, --sync <sync>', '同步执行shell')
   .action(taskAction);
+
+program
+  .command('install')
+  .alias('i')
+  .description('install shell libs for githup')
+  .option('-n, --name <name>', '从githup下载shell libs')
+  .option('-s, --store <store>', '指定本地文件为命令仓库')
+  .action(installAction);
 program.parse(process.argv);

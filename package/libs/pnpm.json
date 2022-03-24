@@ -7,7 +7,8 @@
         },
         {
             "cli": "pnpm run dev",
-            "desc": "启动开发环境"
+            "desc": "启动开发环境",
+            "isTemp": true
         }
     ]
 }

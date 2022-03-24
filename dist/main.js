@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const baseAction_1 = require("./commands/baseAction");
 const searchAction_1 = require("./commands/searchAction");
 const taskAction_1 = require("./commands/taskAction");
+const installAction_1 = require("./commands/installAction");
 const commander_1 = require("commander");
 const program = new commander_1.Command();
 program
@@ -27,4 +28,11 @@ program
     .option('-a, --async <async>', '异步执行shell')
     .option('-s, --sync <sync>', '同步执行shell')
     .action(taskAction_1.taskAction);
+program
+    .command('install')
+    .alias('i')
+    .description('install shell libs for githup')
+    .option('-n, --name <name>', '从githup下载shell libs')
+    .option('-s, --store <store>', '指定本地文件为命令仓库')
+    .action(installAction_1.installAction);
 program.parse(process.argv);

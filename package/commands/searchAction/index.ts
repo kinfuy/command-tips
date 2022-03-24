@@ -12,9 +12,10 @@ export const searchAction = async (cmd: SearchCmd) => {
       const shells = await getFileShells(`${libsoutputPath}/${cmd.tag}.json`);
       if (shells) {
         const shellQuestion = createQuestions('shell', shells.shell);
-        const { shell } = await inquirer.prompt(shellQuestion);
-        log.info(`正在执行:${shell}`);
-        runShell(shell)
+        const { shell, isChange, newShell } = await inquirer.prompt(shellQuestion);
+        const editorShell = isChange ? newShell : shell;
+        log.info(`正在执行:${editorShell}`);
+        runShell(editorShell)
           .then((msg) => {
             log.success(msg);
           })
