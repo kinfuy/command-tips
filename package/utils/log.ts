@@ -1,4 +1,6 @@
-import { green, red, yellowBright, blueBright } from 'chalk';
+import chalk from 'chalk';
+
+const { green, red, yellowBright, blueBright } = chalk;
 const success = (msg: string) => console.log(green(msg));
 const error = (msg: string) => console.log(red(msg));
 const warning = (msg: string) => console.log(yellowBright(msg));

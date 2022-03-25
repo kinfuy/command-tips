@@ -6,11 +6,12 @@
     "build": "pnpm run clean && tsc && pnpm run copy && npm link",
     "copy": "gulp --require sucrase/register/ts --gulpfile build/gulpfile.ts",
     "clean": "rimraf dist",
-    "psuh": "git push origin master && git push githup master"
+    "push": "git push origin master && git push githup master"
   },
   "bin": {
     "sctt": "./dist/main.js"
   },
+  "perferGlobal": true,
   "keywords": [
     "shell",
     "command"
@@ -18,7 +19,6 @@
   "author": "Yonghu",
   "license": "MIT",
   "devDependencies": {
-    "@types/clear": "^0.1.2",
     "@types/gulp": "^4.0.9",
     "@types/inquirer": "^8.2.0",
     "@types/inquirer-autocomplete-prompt": "^1.3.3",
@@ -26,17 +26,14 @@
     "@types/shelljs": "^0.8.11",
     "chalk": "4.1.2",
     "commander": "^9.1.0",
-    "esbuild": "^0.14.27",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "gulp": "^4.0.2",
     "inquirer": "^8.2.1",
     "rimraf": "^3.0.2",
-    "sucrase": "^3.20.3",
-    "typescript": "^4.6.2"
+    "sucrase": "^3.20.3"
   },
   "dependencies": {
-    "clear": "^0.1.0",
     "figlet": "^1.5.2",
     "inquirer-autocomplete-prompt": "^2.0.0",
     "shelljs": "^0.8.5"

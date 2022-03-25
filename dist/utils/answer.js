@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createAllSearchQuestions = exports.createQuestions = void 0;
 const shell_1 = require("./shell");
@@ -46,8 +37,8 @@ const createQuestions = (name, shell) => {
     return questions;
 };
 exports.createQuestions = createQuestions;
-const createAllSearchQuestions = () => __awaiter(void 0, void 0, void 0, function* () {
-    const shells = yield (0, shell_1.getShells)();
+const createAllSearchQuestions = async () => {
+    const shells = await (0, shell_1.getShells)();
     return [
         {
             name: 'search',
@@ -55,7 +46,7 @@ const createAllSearchQuestions = () => __awaiter(void 0, void 0, void 0, functio
             message: '试试搜索一下！',
             emptyText: 'sorry not found',
             source: (answersSoFar, input) => {
-                return new Promise((resolve, reject) => __awaiter(void 0, void 0, void 0, function* () {
+                return new Promise(async (resolve, reject) => {
                     if (input) {
                         const matchShell = shells.filter((x) => {
                             return x.cli.includes(input);
@@ -65,7 +56,7 @@ const createAllSearchQuestions = () => __awaiter(void 0, void 0, void 0, functio
                     else {
                         resolve([]);
                     }
-                }));
+                });
             },
             filter: (val) => {
                 const cli = val.replace(/\(.*\)$/, '');
@@ -92,5 +83,5 @@ const createAllSearchQuestions = () => __awaiter(void 0, void 0, void 0, functio
             },
         },
     ];
-});
+};
 exports.createAllSearchQuestions = createAllSearchQuestions;

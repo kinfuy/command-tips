@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "esnext",
     "outDir": "./dist",
     "baseUrl": "./package",
-    "strict": true,
+    "module": "CommonJS",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   },
   "include": ["package", "typings"],
   "exclude": ["node_modules"]
