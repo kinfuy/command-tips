@@ -8,7 +8,7 @@ export const createQuestions = (name: string, shell: ShellInfo[]): QuestionColle
       type: 'list',
       message: '请选择需要执行的命令？',
       choices: shell.map((x) => `${x.cli}(${x.desc})`),
-      filter: (val) => {
+      filter: (val: any) => {
         const cli = val.replace(/\(.*\)$/, '');
         return cli;
       },
@@ -17,7 +17,7 @@ export const createQuestions = (name: string, shell: ShellInfo[]): QuestionColle
       name: 'isChange',
       type: 'confirm',
       message: '是否需要修改shell？',
-      when: (answer) => {
+      when: (answer: any) => {
         return shell.some((x) => x.cli === answer[name] && x.isTemp);
       },
     },
@@ -28,7 +28,7 @@ export const createQuestions = (name: string, shell: ShellInfo[]): QuestionColle
       default: (answer: any) => {
         return answer[name];
       },
-      when: (answer) => {
+      when: (answer: any) => {
         return answer.isChange;
       },
     },

@@ -5,9 +5,7 @@
 - 记录常用命令
 - search 常用命令
 
-```shell
-ctt shell add xxx
-ctt shell delete xxx
-ctt shell update xxx
-ctt shell search xxx
-```
+### 用法
+
+- sctt search（可简写 sctt s）
+  > 可检索仓库内 shell 命令

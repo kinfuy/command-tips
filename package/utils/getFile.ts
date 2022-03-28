@@ -1,5 +1,6 @@
 import glob from 'fast-glob';
 import path from 'path';
+import { outputPath } from './../config/path';
 
 /**
  * 获取文件
@@ -8,7 +9,8 @@ import path from 'path';
  * @returns
  */
 export const getFiles = async (sufix: string, dir: string = 'libs') => {
-  const rootPath = await path.resolve(__dirname, `../${dir}`);
+  const rootPath = await path.resolve(outputPath, `${dir}`);
+  console.log('🔥log=>getFile=>13:rootPath:%o', rootPath);
   return glob(`*.${sufix}`, { cwd: rootPath, absolute: true });
 };
 

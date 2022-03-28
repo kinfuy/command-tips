@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "outDir": "./dist",
-    "baseUrl": "./package",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
+    "module": "ESNext",
     "strict": true,
-    "skipLibCheck": true
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "dist",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["package", "typings"],
   "exclude": ["node_modules"]

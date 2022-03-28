@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { baseAction } from './commands/baseAction';
 import { searchAction } from './commands/searchAction';
 import { taskAction } from './commands/taskAction';

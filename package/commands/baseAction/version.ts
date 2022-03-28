@@ -1,5 +1,5 @@
 import { promisify } from 'util';
-import pkg from '../../package.json';
+import pkg from '../../../package.json';
 import { log } from '../../utils/log';
 
 const figlet = promisify(require('figlet'));

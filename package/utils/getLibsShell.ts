@@ -1,4 +1,5 @@
-import { readFile } from 'fs/promises';
+import { promises } from 'fs';
+const { readFile } = promises;
 import { ShellCliJson } from '../type/shell.type';
 
 /**
