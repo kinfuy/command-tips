@@ -1,6 +1,6 @@
 import { resolve, join, basename } from 'path';
 import { copyFile, mkdir, access } from 'fs/promises';
-import { rootPath, outputPath, libsEnterPath, libsoutputPath } from './config/path';
+import { rootPath, outputPath, libsEnterPath, libsoutputPath } from './utils/path';
 import { getFiles } from '../package/utils/getFile';
 
 const moveDir = async (files: string[]) => {

@@ -19,6 +19,7 @@ specifiers:
   gulp: ^4.0.2
   inquirer: ^8.2.1
   inquirer-autocomplete-prompt: ^2.0.0
+  ora: ^5.1.0
   rimraf: ^3.0.2
   rollup: ^2.70.1
   rollup-plugin-typescript2: ^0.31.2
@@ -36,6 +37,7 @@ dependencies:
   fs-extra: 10.0.1
   inquirer: 8.2.1
   inquirer-autocomplete-prompt: 2.0.0_inquirer@8.2.1
+  ora: 5.4.1
   shelljs: 0.8.5
 
 devDependencies:

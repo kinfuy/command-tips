@@ -10,7 +10,6 @@ import { outputPath } from './../config/path';
  */
 export const getFiles = async (sufix: string, dir: string = 'libs') => {
   const rootPath = await path.resolve(outputPath, `${dir}`);
-  console.log('🔥log=>getFile=>13:rootPath:%o', rootPath);
   return glob(`*.${sufix}`, { cwd: rootPath, absolute: true });
 };
 

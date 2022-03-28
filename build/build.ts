@@ -18,13 +18,13 @@ const getBundle = async () => {
     input: resolve(__dirname, '../package/main.ts'),
     external,
     plugins: [
-      ts({
-        tsconfig: resolve(__dirname, './../tsconfig.json'),
-      }),
       nodeResolve({
         extensions: ['.js', '.ts'],
       }),
       commonjs(),
+      ts({
+        tsconfig: resolve(__dirname, './../tsconfig.json'),
+      }),
       json(),
     ],
   });
