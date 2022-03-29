@@ -1,6 +1,5 @@
 import { baseAction } from './commands/baseAction';
 import { searchAction } from './commands/searchAction';
-import { taskAction } from './commands/taskAction';
 import { installAction } from './commands/installAction';
 import { addAction } from './commands/addAction';
 import { Command } from 'commander';
@@ -20,14 +19,6 @@ program
   .option('-t, --tag <tag>', '在该类库中检索shell')
   .option('-s, --similar <similar>', '字符串模糊匹配shell')
   .action(searchAction);
-
-program
-  .command('task')
-  .alias('t')
-  .description('run more shell')
-  .option('-a, --async <async>', '异步执行shell')
-  .option('-s, --sync <sync>', '同步执行shell')
-  .action(taskAction);
 
 program
   .command('add')
