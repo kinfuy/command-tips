@@ -5,13 +5,20 @@ import ora from 'ora';
 import download from 'download-git-repo';
 export const installAction = async (install: InstallCmd) => {
   if (install.name) {
-    const spinner = ora('模板拉去中...').start();
-    const repo = `HitStarrySky/${install.name}`;
-    await download(repo, join(rootPath, `${install.name}`), (err: any) => {
-      if (err) spinner.fail(`${install.name}:模板拉取失败！`);
-      else {
-        spinner.succeed(`${install.name}:模板下载成功！`);
-      }
-    });
+    await downloadTemplate(install.name);
+  }
+  if (install.author) {
+    await downloadTemplate(`HitStarrySky/${install.author}`);
   }
 };
+
+async function downloadTemplate(name: string) {
+  const spinner = ora('模板拉去中...').start();
+  const template = name.slice(name.lastIndexOf('/'));
+  await download(name, join(rootPath, `${template}`), (err: any) => {
+    if (err) spinner.fail(`${name}:模板拉取失败！`);
+    else {
+      spinner.succeed(`${name}:模板下载成功！`);
+    }
+  });
+}

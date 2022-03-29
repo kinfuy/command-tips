@@ -8,4 +8,12 @@
 ### 用法
 
 - sctt search（可简写 sctt s）
+
   > 可检索仓库内 shell 命令
+
+- sctt add
+
+  > 添加 shell 可导入文件，和指定命令
+
+- sctt install -n xxx
+  > 下载指定仓库模板（）

@@ -3,7 +3,7 @@ const { readFile } = promises;
 import { ShellCliJson } from '../type/shell.type';
 
 /**
- * 获取文件内的shell
+ * 获取内部库的shell
  * @param path
  * @returns
  */

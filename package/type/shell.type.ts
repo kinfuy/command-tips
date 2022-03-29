@@ -10,6 +10,13 @@ export interface SearchCmd {
 export interface InstallCmd {
   name?: string;
   store?: string;
+  author?: string;
+}
+
+export interface AddCmd {
+  file?: string;
+  shell?: string;
+  change?: boolean | boolean;
 }
 export interface ShellInfo {
   cli: string;

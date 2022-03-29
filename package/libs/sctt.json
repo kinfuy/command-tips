@@ -1,0 +1,14 @@
+{
+    "name": "sctt",
+    "shell": [
+        {
+            "cli": "sctt search",
+            "desc": "检索命令"
+        },
+        {
+            "cli": "sctt install",
+            "desc": "下载模板",
+            "isTemp": true
+        }
+    ]
+}
