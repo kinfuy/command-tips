@@ -1,0 +1,27 @@
+{
+  "name": "command-tips",
+  "version": "1.0.0",
+  "description": "about shell command  tips",
+  "private": false,
+  "bin": {
+    "sctt": "main.js"
+  },
+  "keywords": [
+    "shell",
+    "command"
+  ],
+  "author": "Yonghu",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "^9.1.0",
+    "download-git-repo": "^3.0.2",
+    "fast-glob": "^3.2.11",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.0.1",
+    "inquirer": "^8.2.1",
+    "inquirer-autocomplete-prompt": "^2.0.0",
+    "ora": "^5.1.0",
+    "shelljs": "^0.8.5"
+  }
+}

@@ -11,6 +11,7 @@ specifiers:
   '@types/node': ^17.0.21
   '@types/shelljs': ^0.8.11
   chalk: 4.1.2
+  command-tips: ^0.0.1
   commander: ^9.1.0
   download-git-repo: ^3.0.2
   fast-glob: ^3.2.11
@@ -30,6 +31,7 @@ specifiers:
 
 dependencies:
   chalk: 4.1.2
+  command-tips: 0.0.1
   commander: 9.1.0
   download-git-repo: 3.0.2
   fast-glob: 3.2.11
@@ -784,6 +786,22 @@ packages:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
     dev: true
+
+  /command-tips/0.0.1:
+    resolution: {integrity: sha512-2UikLRewUHNYIMYfbZT08YMi24PxrbU3IyAQ11OA49oBhyBdV8bAuS50vnNICKz4vBM6X1FwNRUC3oeMInR8Ig==}
+    hasBin: true
+    dependencies:
+      chalk: 4.1.2
+      commander: 9.1.0
+      download-git-repo: 3.0.2
+      fast-glob: 3.2.11
+      figlet: 1.5.2
+      fs-extra: 10.0.1
+      inquirer: 8.2.1
+      inquirer-autocomplete-prompt: 2.0.0_inquirer@8.2.1
+      ora: 5.4.1
+      shelljs: 0.8.5
+    dev: false
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}

@@ -5,7 +5,6 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import { dependencies } from '../package.json';
 import commonjs from '@rollup/plugin-commonjs';
 import { resolve } from 'path';
-import { outputPath } from '../package/config/path';
 const external = Object.keys(dependencies || '');
 const globals = external.reduce((prev, current) => {
   const newPrev = prev;

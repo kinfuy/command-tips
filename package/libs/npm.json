@@ -1,0 +1,15 @@
+{
+    "name": "npm",
+    "shell": [
+        {
+            "cli": "npm rm ｜ uninstall --global command-tips",
+            "desc": "卸载全局link包",
+            "isTemp": true
+        },
+        {
+            "cli": "npm ls --global command-tips",
+            "desc": "查看全局link包",
+            "isTemp": true
+        }
+    ]
+}

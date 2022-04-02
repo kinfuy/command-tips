@@ -1,7 +1,7 @@
-// 基于打包后的路径 dist
+// 基于打包后的路径
 import { resolve } from 'path';
-export const rootPath = resolve(__dirname, '..');
-export const outputPath = resolve(rootPath, 'dist');
+export const rootPath = __dirname;
+export const outputPath = __dirname;
 export const enterPath = resolve(rootPath, 'package');
 
 export const libsEnterPath = resolve(enterPath, 'libs');

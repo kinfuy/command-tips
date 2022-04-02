@@ -12,7 +12,7 @@ const moveDir = async (files: string[]) => {
 export const copyFiles = async () => {
   const files = await getFiles('json', libsEnterPath);
   Promise.all([
-    copyFile(resolve(rootPath, 'package.json'), resolve(outputPath, 'package.json')),
+    copyFile(resolve(__dirname, 'package.json'), resolve(outputPath, 'package.json')),
     copyFile(resolve(rootPath, 'README.md'), resolve(outputPath, 'README.md')),
     moveDir(files),
   ]);
